@@ -1,0 +1,42 @@
+.canvas{
+    object-fit: cover;
+}
+
+:where(.css-dev-only-do-not-override-usln0u).ant-form-item{
+    margin-bottom: 10px;
+}
+
+input[type=file]{
+    display: none;
+}
+.app-container {
+    display: flex;
+    position: relative;
+  }
+  
+  .sidebar {
+    position: fixed;
+    left: -300px;
+    width: 300px;
+    background-color: #f4f4f4;
+    height: 100%;
+    transition: left 0.3s ease;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  .sidebar.visible {
+    left: 0;
+  }
+  
+  .content {
+position: absolute; 
+left: 0;
+top: 5;
+transition:left 0.3s ease;
+box-sizing: border-box;
+  }
+  .content.visible {
+    left: 252px;
+  }
+  
