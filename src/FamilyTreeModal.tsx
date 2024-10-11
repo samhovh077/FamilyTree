@@ -12,7 +12,6 @@ import {
   Image,
 } from "antd";
 import { SetStateAction, useEffect, useState } from "react";
-import GoogleMap from "../src/GoogleMap/index.tsx";
 
 interface UserFormProps {
   firstName: string;
@@ -36,8 +35,6 @@ interface IUseForm {
 const UserForm: React.FC<IUseForm> = ({
   setCreateId,
   createId,
-  setOpenMap,
-  openMap,
   setOpen,
 }) => {
   const [formData, setFormData] = useState<UserFormProps>({
@@ -223,7 +220,6 @@ const UserForm: React.FC<IUseForm> = ({
                   <Input
                     onClick={() => {
                       setLocation({ ...location, birthOrDeath: "" });
-                      setOpenMap(true);
                     }}
                     suffix={
                       <Image
@@ -298,7 +294,6 @@ const UserForm: React.FC<IUseForm> = ({
                     <Input
                       onClick={() => {
                         setLocation({ ...location, birthOrDeath: "death" });
-                        setOpenMap(true);
                       }}
                       suffix={
                         <Image
@@ -333,12 +328,6 @@ const UserForm: React.FC<IUseForm> = ({
           </Form>
         </Flex>
       </Modal>
-      <GoogleMap
-        setOpenMap={setOpenMap}
-        openMap={openMap}
-        location={location}
-        setLocation={setLocation}
-      />
     </>
   );
 };
